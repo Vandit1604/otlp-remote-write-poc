@@ -1,0 +1,12 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: "prometheus-2"
+    static_configs:
+      - targets: ["localhost:9091"]
+
+remote_write:
+  - url: "http://localhost:9093/api/v1/write"  # Forward to the second Prometheus instance
+
+

@@ -1,0 +1,19 @@
+receivers:
+  prometheus:
+    config:
+      scrape_configs:
+        - job_name: "otel-remote-prometheus"
+          scrape_interval: 5s
+          static_configs:
+            - targets: ["localhost:9093"]  # Scrape the Prometheus Remote Write sink
+
+exporters:
+  debug:
+    verbosity: detailed
+
+service:
+  pipelines:
+    metrics:
+      receivers: [prometheus]
+      exporters: [debug]
+
