@@ -31,6 +31,7 @@ otlp-remote-write-poc
 ---
 > [!IMPORTANT]  
 > Use the latest prometheus and otel-contrib binary from their respective release pages.
+> The Repository doesn't contains any binaries
 ---
 
 ---
